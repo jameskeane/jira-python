@@ -77,6 +77,8 @@ class ResultList(list):
         self.total = _total if _total is not None else len(self)
 
 
+JIRA_BASE_URL = '{server}/rest/api/{rest_api_version}/{path}'
+
 class JIRA(object):
 
     """
@@ -103,8 +105,6 @@ class JIRA(object):
             #'Expires': 'Thu, 01 Jan 1970 00:00:00 GMT'
         }
     }
-
-    JIRA_BASE_URL = '{server}/rest/api/{rest_api_version}/{path}'
 
     def __init__(self, options=None, basic_auth=None, oauth=None, validate=None):
         """
